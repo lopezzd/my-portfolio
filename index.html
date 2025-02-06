@@ -6,20 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   <style type="text/tailwindcss">
+    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+    @import "tailwindcss";
     @theme {
-        --color-clifford: #da373d;
-      }
+      --font-display: "Rajdhani", serif; 
+    }
     </style>
 </head>
 
-<body>
-  <header>
-    <nav>
-      <ul>
+<body class="">
+  <header class="font-display w-screen grid grid-cols-2 grid-rows-1  gap-4 py-8 px-16">
+    <div class="hidden lg:block">
+
+    </div>
+    <nav class="w-full hidden lg:block">
+      <ul class="flex gap-20 text-lg font-medium w-full">
         <li><a href="#Home">Home</a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
+        <li><a href="#Sobre">Sobre</a></li>
+        <li><a href="#Projetos">Projetos</a></li>
+        <li class=""><a href="#Contato" class="transition duration-300 hover:text-red-600 ">Contato</a></li>
       </ul>
     </nav>
   </header>
