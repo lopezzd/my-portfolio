@@ -1,40 +1,482 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   <style type="text/tailwindcss">
-    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
-    @import "tailwindcss";
-    @theme {
-      --font-display: "Rajdhani", serif; 
-    }
+    @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Rajdhani:wght@300;400;500;600;700&display=swap");
+      @import "tailwindcss";
+      @theme {
+        --font-display: "Rajdhani", serif;
+        --font-pixel: "Pixelify Sans", serif;
+      }
+
+      @layer utilities {
+        @keyframes bounce {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+
+          50% {
+            transform: translateY(20px);
+          }
+        }
+
+        @keyframes typing {
+          0% {
+            width: 0;
+          }
+          50% {
+            width: 0;
+          }
+          100% {
+            width: 100%;
+          }
+        }
+
+        .animate-type {
+          white-space: nowrap;
+          overflow: hidden;
+          border-color: transparent;
+          animation: typing 4s steps(48, end) forwards;
+        }
+
+        .animate-bounce {
+          animation: bounce 5s ease-in-out infinite;
+        }
+
+        @keyframes marquee {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-100%);
+          }
+        }
+
+        .marquee {
+          animation: marquee 10s linear infinite;
+        }
+
+        .marquee:hover {
+          animation-play-state: paused;
+        }
+      }
     </style>
 </head>
 
-<body class="">
-  <header class="font-display w-screen grid grid-cols-2 grid-rows-1  gap-4 py-8 px-16">
-    <div class="hidden lg:block">
-
-    </div>
+<body class="font-display text-lg text-stone-700 bg-stone-200 overflow-x-hidden">
+  <header class="w-screen grid grid-cols-2 grid-rows-1 gap-4 py-8 px-16 overflow-hidden">
+    <div class="hidden lg:block"></div>
     <nav class="w-full hidden lg:block">
       <ul class="flex gap-20 text-lg font-medium w-full">
-        <li><a href="#Home">Home</a></li>
-        <li><a href="#Sobre">Sobre</a></li>
-        <li><a href="#Projetos">Projetos</a></li>
-        <li class=""><a href="#Contato" class="transition duration-300 hover:text-red-600 ">Contato</a></li>
+        <li>
+          <a href="#Home" class="transition duration-300 hover:text-red-600">Home</a>
+        </li>
+        <li>
+          <a href="#Sobre" class="transition duration-300 hover:text-red-600">Sobre</a>
+        </li>
+        <li>
+          <a href="#Projetos" class="transition duration-300 hover:text-red-600">Projetos</a>
+        </li>
+        <li>
+          <a href="#Contato" class="transition duration-300 hover:text-red-600">Contato</a>
+        </li>
       </ul>
     </nav>
   </header>
   <main>
-    <section></section>
-    <section></section>
-    <section></section>
-  </main>
-  <footer>
+    <section id="Home" class="min-h-screen w-screen overflow-hidden flex flex-col items-center justify-center pb-18">
+      <div class="flex flex-col justify-center items-center">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-pixel font-semibold animate-type text-center">
+          João Henrique <br class="block md:hidden" />Lopes Divino
+        </h1>
+        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-center">
+          FullStack Developer
+        </h2>
+        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold animate-bounce text-center">
+          { React JS | Typescript | Tailwind | Java | Spring }
+        </h2>
+      </div>
+      <div>
+        <ul class="flex justify-center mt-5 space-x-5">
+          <li>
+            <a class="text-stone-700 hover:text-red-600 transition duration-300"
+              href="https://www.linkedin.com/in/lopezzd/" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-linkedin size-10">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect width="4" height="12" x="2" y="9" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="text-stone-700 hover:text-red-600 transition duration-300"
+              href="mailto:joaohenriquelopesdiv@gmail.com">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-mail size-10">
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="text-stone-700 hover:text-red-600 transition duration-300" href="https://github.com/lopezzd"
+              target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-github size-10">
+                <path
+                  d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                <path d="M9 18c-4.51 2-5-2-7-2" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
 
+    <section id="Sobre" class="min-h-screen w-screen grid md:grid-cols-2 p-18">
+      <div class="w-full h-full flex flex-col justify-center items-left">
+        <h3 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold my-4 mx-8">
+          E aí, de boa?
+        </h3>
+        <p class="text-xl lg:text-2xl font-medium my-4 mx-8">
+          Sou um
+          <b class="font-medium text-red-600">Desenvolvedor FullStack</b> e
+          apaixonado por tecnologia e suas novidades! Sempre busco aprimorar
+          minhas habilidades, explorando novas ferramentas e metodologias para
+          criar aplicações eficientes e intuitivas. Tenho experiência com
+          desenvolvimento <b class="font-medium text-red-600">Frontend</b> e
+          <b class="font-medium text-red-600">Backend</b>, construindo
+          soluções que unem desempenho, design e usabilidade. 🚀
+        </p>
+      </div>
+
+      <div class="flex flex-col justify-center items-center">
+        <div class="flex justify-center items-center 1/2 p-4">
+          <h2 class="text-4xl font-semibold text-center">
+            Minhas habilidades
+          </h2>
+        </div>
+        <div class="w-full h-1/2 flex flex-wrap justify-center items-center gap-4">
+          <div class="rounded-lg px-4 py-2 font-bold border border-stone-500 py-2 px-4">
+            <img class="h-8 inline mr-2"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+            HTML
+          </div>
+
+          <div class="rounded-lg px-4 py-2 font-bold border border-stone-500 py-2 px-4">
+            <img class="h-8 inline mr-2"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+            CSS
+          </div>
+
+          <div class="rounded-lg px-4 py-2 font-bold border border-stone-500 py-2 px-4">
+            <img class="h-8 inline mr-2"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+            Javascript
+          </div>
+
+          <div class="rounded-lg px-4 py-2 font-bold border border-stone-500 py-2 px-4">
+            <img class="h-8 inline mr-2"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" />
+            C
+          </div>
+
+          <div class="rounded-lg px-4 py-2 font-bold border border-stone-500 py-2 px-4">
+            <img class="h-8 inline mr-2"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+            Python
+          </div>
+
+          <div class="rounded-lg px-4 py-2 font-bold border border-stone-500 py-2 px-4">
+            <img class="h-8 inline mr-2"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
+            Java
+          </div>
+
+          <div class="rounded-lg px-4 py-2 font-bold border border-stone-500 py-2 px-4">
+            <img class="h-8 inline mr-2"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" />
+            Next JS
+          </div>
+
+          <div class="rounded-lg px-4 py-2 font-bold border border-stone-500 py-2 px-4">
+            <img class="h-8 inline mr-2"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+            React JS
+          </div>
+
+          <div class="rounded-lg px-4 py-2 font-bold border border-stone-500 py-2 px-4">
+            <img class="h-8 inline mr-2"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
+            MySQL
+          </div>
+
+          <div class="rounded-lg px-4 py-2 font-bold border border-stone-500 py-2 px-4">
+            <img class="h-8 inline mr-2"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" />
+            Spring Boot
+          </div>
+
+          <div class="rounded-lg px-4 py-2 font-bold border border-stone-500 py-2 px-4">
+            <img class="h-8 inline mr-2"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" />
+            Node
+          </div>
+
+          <div class="rounded-lg px-4 py-2 font-bold border border-stone-500 py-2 px-4">
+            <img class="h-8 inline mr-2"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+            Git
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="Projetos" class="min-h-screen p-18">
+      <h2 class="text-4xl font-semibold text-center mb-8">Projetos</h2>
+      <div class="flex flex-wrap gap-20 w-full items-center justify-center">
+
+        <a href="https://github.com/lopezzd/dslist" target="_blank" class="group relative block w-md h-52">
+          <span class="absolute inset-0 border-2 border-dashed border-black"></span>
+
+          <div
+            class="relative flex h-full w-md transform items-end border-2 border-black bg-white transition-transform group-hover:scale-105">
+            <div
+              class="p-4 bg-[url(../assets/DsList.jpeg)] h-full w-full bg-no-repeat bg-cover bg-center transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
+            </div>
+
+            <div class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100">
+              <h3 class="text-xl font-medium">DS List</h3>
+
+              <p class="mt-4 text-sm sm:text-base">
+                API REST desenvolvida em Java com Spring Boot para gerenciar listas de carros. O projeto permite listar
+                carros, organizar listas e recuperar informações detalhadas dos veículos.
+              </p>
+
+              <p class="mt-8 font-bold">Saber mais</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://github.com/lopezzd/password-validation" target="_blank" class="group relative block w-md h-52">
+          <span class="absolute inset-0 border-2 border-dashed border-black"></span>
+
+          <div
+            class="relative flex h-full w-md transform items-end border-2 border-black bg-white transition-transform group-hover:scale-105">
+            <div
+              class="p-4 bg-[url(../assets/PasswordValidator.jpeg)] h-full w-full bg-no-repeat bg-cover bg-center transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
+            </div>
+
+            <div class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100">
+              <h3 class="text-xl font-medium">Validador de Senha</h3>
+
+              <p class="mt-4 text-sm sm:text-base">
+                Projeto consiste em um validador de senhas desenvolvido com HTML, CSS e JavaScript. Verifica se a senha
+                inserida pelo usuário atende a determinados critérios de segurança.
+              </p>
+
+              <p class="mt-8 font-bold">Saber mais</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://github.com/lopezzd/desafio-picpay" target="_blank" class="group relative block w-md h-52">
+          <span class="absolute inset-0 border-2 border-dashed border-black"></span>
+
+          <div
+            class="relative flex h-full w-md transform items-end border-2 border-black bg-white transition-transform group-hover:scale-105">
+            <div
+              class="p-4 bg-[url(../assets/PicPay.jpeg)] h-full w-full bg-no-repeat bg-cover bg-center transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
+            </div>
+            <div class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100">
+              <h3 class="text-xl font-medium">Desafio PicPay</h3>
+
+              <p class="mt-4 text-sm sm:text-base">
+                Projeto desenvolvido com Java Spring e consiste em uma plataforma de pagamentos que permite o depósito e
+                a transferência de dinheiro entre usuários.
+              </p>
+
+              <p class="mt-8 font-bold">Saber mais</p>
+            </div>
+
+          </div>
+        </a>
+
+        <a href="https://github.com/lopezzd/to-do-pomo" target="_blank" class="group relative block w-md h-52">
+          <span class="absolute inset-0 border-2 border-dashed border-black"></span>
+          <div
+            class="relative flex h-full w-md transform items-end border-2 border-black bg-white transition-transform group-hover:scale-105">
+            <div
+              class="p-4 bg-[url(../assets/ToDo.jpeg)] h-full w-full bg-no-repeat bg-cover bg-center transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
+            </div>
+
+            <div class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100">
+              <h3 class="text-xl font-medium">To Do List</h3>
+
+              <p class="mt-4 text-sm sm:text-base">
+                Projeto desenvolvido com React e estilizado com Tailwind CSS, combinando gerenciamento de tarefas com a
+                técnica Pomodoro para aumentar a produtividade.
+              </p>
+
+              <p class="mt-8 font-bold">Saber mais</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+    <section id="Contato" class="min-h-screen w-screen overflow-hidden pb-18 grid place-items-center">
+      <div class="w-3/4">
+        <div class="flex flex-col grid-cols-9 p-2 mx-auto md:grid">
+          <div class="flex md:contents flex-row-reverse">
+            <div
+              class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto">
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-book-text size-6">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
+                <path d="M8 11h8" />
+                <path d="M8 7h6" />
+              </svg>
+              <h3 class="text-lg font-semibold lg:text-xl">Técnico em Informática - CEMEP</h3>
+              <p class="mt-2 leading-6">O curso ompanhando a crescente demanda por profissionais de Tecnologia da
+                Informação. A formação é voltada para programação, banco de dados, redes e fundamentos de informática,
+                preparando os alunos para o mercado de trabalho e para a continuidade dos estudos na área de TI</p>
+              <span class="absolute text-sm -top-5 left-2 whitespace-nowrap">Date 1</span>
+            </div>
+            <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
+              <div class="flex items-center justify-center w-6 h-full">
+                <div class="w-1 h-full bg-red-600 rounded-t-full bg-gradient-to-b from-red-300 to-red-600">
+                </div>
+              </div>
+              <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-red-500 rounded-full top-1/2"></div>
+            </div>
+          </div>
+
+          <div class="flex md:contents">
+            <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
+              <div class="flex items-center justify-center w-6 h-full">
+                <div class="w-1 h-full bg-red-600 rounded-t-full bg-gradient-to-b from-red-600 to-red-300"></div>
+              </div>
+              <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-red-500 rounded-full top-1/2"></div>
+            </div>
+            <div class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-6 col-end-10 mr-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-briefcase-business size-6">
+                <path d="M12 12h.01" />
+                <path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                <path d="M22 13a18.15 18.15 0 0 1-20 0" />
+                <rect width="20" height="14" x="2" y="6" rx="2" />
+              </svg>
+              <h3 class="text-lg font-semibold lg:text-xl">Estágio React JS</h3>
+              <p class="mt-2 leading-6">
+                Responsável por redesign de interfaces web utilizando bibliotecas e ferramentas
+                modernas como UI Materials, Bootstrap e Figma no site interno da empresa. Minha função
+                envolvia reformular componentes reutilizáveis e responsivos, aprimorando a consistência
+                visual e a experiência do usuário </p>
+              <span class="absolute text-sm -top-5 left-2 whitespace-nowrap">2023</span>
+            </div>
+          </div>
+
+          <div class="flex md:contents flex-row-reverse">
+            <div
+              class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-briefcase-business size-6">
+                <path d="M12 12h.01" />
+                <path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                <path d="M22 13a18.15 18.15 0 0 1-20 0" />
+                <rect width="20" height="14" x="2" y="6" rx="2" />
+              </svg>
+              <h3 class="text-lg font-semibold lg:text-xl">Jovem Aprendiz</h3>
+              <p class="mt-2 leading-6">Aprendiz no setor administrativo com diversas atividades entre setores.
+                Experiências com o ambiente Microsoft: Forms, Power Apps, Power Automate e SharePoint. Reuniões e
+                projetos com a metodologia Scrumban</p>
+              <span class="absolute text-sm -top-5 left-2 whitespace-nowrap">2023 - 2024</span>
+            </div>
+            <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
+              <div class="flex items-center justify-center w-6 h-full">
+                <div
+                  class="w-1 h-full bg-red-600 rounded-t-full bg-gradient-to-b from-red-300 to-red-600 border-b boder-yellow-500">
+                </div>
+              </div>
+              <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-red-500 rounded-full top-1/2"></div>
+            </div>
+          </div>
+
+          <div class="flex md:contents">
+            <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
+              <div class="flex items-center justify-center w-6 h-full">
+                <div class="w-1 h-full bg-red-600 rounded-t-full bg-gradient-to-b from-red-600 to-red-300"></div>
+              </div>
+              <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-red-500 rounded-full top-1/2"></div>
+            </div>
+            <div class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-6 col-end-10 mr-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-book-text size-6">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
+                <path d="M8 11h8" />
+                <path d="M8 7h6" />
+              </svg>
+              <h3 class="text-lg font-semibold lg:text-xl">Sistemas de Informação</h3>
+              <p class="mt-2 leading-6">O Curso de Sistemas de Informação da PUC-Campinas forma profissionais para
+                desenvolver e gerenciar soluções tecnológicas, unindo computação e gestão empresarial. A grade
+                curricular abrange programação, banco de dados, redes, inteligência artificial e engenharia de software,
+                além de promover parcerias com empresas e projetos práticos. Com uma formação alinhada ao mercado, os
+                egressos podem atuar em desenvolvimento de software, análise de sistemas, gestão de TI e segurança
+                cibernética, tanto no setor privado quanto no público, ou seguir carreiras acadêmicas e empreendedoras.
+              </p>
+              <span class="absolute text-sm -top-5 left-2 whitespace-nowrap">2024 - Presente</span>
+            </div>
+          </div>
+
+          <div class="flex md:contents flex-row-reverse">
+            <div
+              class="relative p-4 my-6 text-gray-800 bg-white rounded-xl col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-briefcase-business size-6">
+                <path d="M12 12h.01" />
+                <path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                <path d="M22 13a18.15 18.15 0 0 1-20 0" />
+                <rect width="20" height="14" x="2" y="6" rx="2" />
+              </svg>
+              <h3 class="text-lg font-semibold lg:text-xl">Estágio ou Desenvolvedor Junior?</h3>
+
+              <p class="mt-2 leading-6">A procura!</p>
+
+              <span class="absolute text-sm -top-5 left-2 whitespace-nowrap">?</span>
+            </div>
+            <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
+              <div class="flex items-center justify-center w-6 h-full">
+                <div class="w-1 h-full bg-red-600 rounded-t-full bg-gradient-to-b from-red-300 to-red-600 border-b">
+                </div>
+              </div>
+              <div class="absolute w-6 h-6 -mt-3 bg-white border-4 border-red-500 rounded-full top-1/2"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="Contato" class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+    <hr class="my-6 border-stone-700 border-t sm:mx-auto lg:my-8" />
+    <span class="block text-md sm:text-center font-medium">© 2025 João Henrique Lopes Desenvolvedor Fullstack - Todos os
+      direitos.</span>
   </footer>
 </body>
 
