@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style type="text/tailwindcss">
     @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Rajdhani:wght@300;400;500;600;700&display=swap");
       @import "tailwindcss";
@@ -143,7 +144,8 @@
     </section>
 
     <section id="Sobre" class="min-h-screen w-screen grid md:grid-cols-2 p-18 mb-4">
-      <div class="w-full h-full flex flex-col justify-center items-left">
+      <div data-aos="zoom-in-right" data-aos-easing="ease-in-back" data-aos-duration="500" data-aos-delay="200" data-aos-offset="400"
+        class="w-full h-full flex flex-col justify-center items-left">
         <h3 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold my-4 mx-8">
           E aí, de boa?
         </h3>
@@ -159,7 +161,7 @@
         </p>
       </div>
 
-      <div class="flex flex-col justify-center items-center">
+      <div data-aos="zoom-in-left" data-aos-easing="ease-in-back" data-aos-duration="500" data-aos-delay="200" data-aos-offset="400" class="flex flex-col justify-center items-center">
         <div class="flex justify-center items-center 1/2 p-4">
           <h2 class="text-4xl font-semibold text-center">
             Minhas habilidades
@@ -309,7 +311,8 @@
               <h3 class="text-xl font-medium">DS List</h3>
 
               <p class="mt-4 text-sm sm:text-base">
-                Este projeto é uma API REST desenvolvida em Java com Spring Boot para gerenciar listas de carros, permitindo
+                Este projeto é uma API REST desenvolvida em Java com Spring Boot para gerenciar listas de carros,
+                permitindo
                 lista-los, organizar listas e recuperar informações dos carros.
               </p>
 
@@ -380,7 +383,8 @@
               <h3 class="text-xl font-medium">Projeto Integrador 1° Semestre</h3>
 
               <p class="mt-4 text-sm sm:text-base">
-                Projeto escolar introdutório aos conceitos de desenvolvimento de aplicações CRUD integrado a bancos de dados
+                Projeto escolar introdutório aos conceitos de desenvolvimento de aplicações CRUD integrado a bancos de
+                dados
                 MySQL.
               </p>
 
@@ -682,6 +686,10 @@
     <span class="block text-md sm:text-center font-medium">© 2025 João Henrique Lopes Desenvolvedor Fullstack - Todos os
       direitos.</span>
   </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
